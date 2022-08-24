@@ -15,5 +15,10 @@ function wrapAdjective(flair) {
     };
     return innerFunction;
 }
-wrapAdjective("*");
-wrapAdjective("%")("dedicated programmer");   
+
+function wrapAdjective(wrap = "*") {
+    return function (adjective = "a hard worker") {
+        return `You are ${wrap}${adjective}${wrap}!`
+    };
+};
+wrapAdjective()
